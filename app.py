@@ -12,7 +12,10 @@ def abc():
     
 @app.route("/<name>")
 def name(name):
-    return render_template('name.html',name=name)
+    name=name.capitalize()
+    return render_template('name.html',name=name,image=name+".png")
+
+
 
 if __name__ == "__main__":
     app.run(debug=True,host='0.0.0.0',port=5000)
